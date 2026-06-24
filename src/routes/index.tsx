@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import heroImg from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero-students.png.asset.json";
 import logoAsset from "@/assets/adi-logo.png.asset.json";
 import {
   Menu,
@@ -192,7 +192,7 @@ function Hero() {
         <div className="relative fade-up">
           <div className="absolute inset-0 -rotate-3 rounded-3xl bg-brand-gradient" />
           <img
-            src={heroImg}
+            src={heroAsset.url}
             alt="Digital skills learners"
             width={1024}
             height={1024}
