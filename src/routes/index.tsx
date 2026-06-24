@@ -50,16 +50,25 @@ const courses = [
     title: "Virtual Assistant Mastery",
     duration: "6 Weeks",
     desc: "Practical administrative support, AI tools, freelancing, Fiverr, Upwork, proposal writing, client communication and more.",
+    originalPrice: "KSh 6,500",
+    discount: "35% OFF",
+    offerPrice: "KSh 2,275",
   },
   {
     title: "LinkedIn Optimization Masterclass",
     duration: "2 Days",
     desc: "Optimize your LinkedIn profile to attract recruiters, clients and career opportunities.",
+    originalPrice: "KSh 1,998",
+    discount: "50% OFF",
+    offerPrice: "KSh 999",
   },
   {
     title: "Client Acquisition Mastery",
     duration: "2 Days",
     desc: "Find, approach and win clients online through effective outreach and positioning strategies.",
+    originalPrice: "KSh 1,998",
+    discount: "50% OFF",
+    offerPrice: "KSh 999",
   },
 ];
 
