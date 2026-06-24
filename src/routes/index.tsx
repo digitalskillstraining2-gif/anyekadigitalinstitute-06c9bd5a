@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImg from "@/assets/hero.jpg";
+import logoAsset from "@/assets/adi-logo.png.asset.json";
 import {
   Menu,
   X,
@@ -81,13 +82,8 @@ const whyUs = [
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-2 font-display font-bold">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-gradient text-white shadow-pop">
-        A
-      </span>
-      <span className="text-navy text-lg leading-none">
-        ADI<span className="hidden sm:inline text-muted-foreground font-medium"> · Anyeka Digital</span>
-      </span>
+    <a href="#top" className="flex items-center gap-2" aria-label="Anyeka Digital Institute home">
+      <img src={logoAsset.url} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} />
     </a>
   );
 }
@@ -412,12 +408,11 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="bg-navy py-12 text-white">
+    <footer className="bg-white py-12 text-navy">
       <div className="mx-auto max-w-6xl px-5 text-center">
-        <h3 className="text-2xl font-bold">ANYEKA DIGITAL INSTITUTE (ADI)</h3>
-        <p className="mt-2 text-accent">Future Skills Start Here</p>
-        <div className="mx-auto mt-6 h-px w-24 bg-white/20" />
-        <p className="mt-6 text-sm text-white/60">
+        <img src={logoAsset.url} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto" />
+        <div className="mx-auto mt-6 h-px w-24 bg-navy/15" />
+        <p className="mt-6 text-sm text-muted-foreground">
           © 2026 Anyeka Digital Institute. All rights reserved.
         </p>
       </div>
