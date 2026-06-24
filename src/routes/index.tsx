@@ -273,12 +273,31 @@ function Courses() {
                 {c.duration}
               </span>
               <h3 className="mt-4 text-xl font-bold">{c.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+
+              <div className="mt-5 flex-1" />
+
+              <div className="rounded-2xl border border-dashed border-magenta/40 bg-magenta/5 p-4">
+                <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-magenta">
+                  <span aria-hidden>🎉</span> Sponsored Training Program
+                </div>
+                <div className="mt-3 flex items-center gap-3">
+                  <span className="text-base text-muted-foreground line-through">{c.originalPrice}</span>
+                  <span className="rounded-full bg-sun px-2.5 py-0.5 text-xs font-bold text-navy shadow-sm">
+                    {c.discount}
+                  </span>
+                </div>
+                <div className="mt-2">
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-navy/70">Now Only</div>
+                  <div className="text-2xl font-extrabold text-navy">{c.offerPrice}</div>
+                </div>
+              </div>
+
               <a
                 href={ENROLL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-magenta px-6 py-3 font-semibold text-white transition hover:bg-navy"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-magenta px-6 py-3 font-semibold text-white transition hover:bg-navy"
               >
                 Enroll Now <ArrowRight className="h-4 w-4" />
               </a>
