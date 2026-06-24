@@ -81,6 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Future Skills Start Here — practical digital skills training." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Anyeka Digital Institute (ADI)" },
+      { name: "twitter:title", content: "Anyeka Digital Institute (ADI)" },
+      { property: "og:description", content: "Future Skills Start Here — practical digital skills training." },
+      { name: "twitter:description", content: "Future Skills Start Here — practical digital skills training." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e284e05-f5d0-4d54-a3c6-d738b6cd6dd3/id-preview-eaf05293--1302162b-0ee8-4a02-b053-77894f1bcdee.lovable.app-1782315375160.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e284e05-f5d0-4d54-a3c6-d738b6cd6dd3/id-preview-eaf05293--1302162b-0ee8-4a02-b053-77894f1bcdee.lovable.app-1782315375160.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
