@@ -164,49 +164,48 @@ function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-magenta/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-accent/40 blur-3xl" />
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24">
-        <div className="fade-up">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:grid-cols-2 md:gap-12 md:py-24">
+        <div className="fade-up order-2 md:order-1">
           <span className="inline-flex items-center gap-2 rounded-full bg-magenta/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-magenta">
             <Sparkles className="h-3.5 w-3.5" /> Future Skills Start Here
           </span>
-          <h1 className="mt-5 text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
-            Anyeka Digital <br />
+          <h1 className="mt-5 text-3xl font-bold leading-[1.1] sm:text-5xl md:text-6xl">
+            Anyeka Digital{" "}
             <span className="text-brand-gradient">Institute (ADI)</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+          <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
             Practical digital skills training designed to help you work online, earn globally,
             and build a successful digital career.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href="#courses"
-              className="inline-flex items-center gap-2 rounded-full bg-navy px-7 py-3.5 font-semibold text-white shadow-pop transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-navy px-6 py-3 font-semibold text-white shadow-pop transition hover:scale-[1.02] sm:px-7 sm:py-3.5"
             >
               View Courses <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-navy px-7 py-3.5 font-semibold text-navy transition hover:bg-navy hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-navy px-6 py-3 font-semibold text-navy transition hover:bg-navy hover:text-white sm:px-7 sm:py-3.5"
             >
               Contact Us
             </a>
           </div>
-          <div className="mt-10 flex items-center gap-6 text-sm text-muted-foreground">
-            <div><span className="block text-2xl font-bold text-navy">500+</span>Learners trained</div>
-            <div className="h-10 w-px bg-border" />
-            <div><span className="block text-2xl font-bold text-navy">6+</span>Practical courses</div>
-            <div className="h-10 w-px bg-border" />
-            <div><span className="block text-2xl font-bold text-navy">100%</span>Hands-on</div>
+          <div className="mt-8 grid grid-cols-3 gap-3 text-xs text-muted-foreground sm:gap-6 sm:text-sm">
+            <div><span className="block text-xl font-bold text-navy sm:text-2xl">500+</span>Learners trained</div>
+            <div className="border-l border-border pl-3 sm:pl-6"><span className="block text-xl font-bold text-navy sm:text-2xl">6+</span>Practical courses</div>
+            <div className="border-l border-border pl-3 sm:pl-6"><span className="block text-xl font-bold text-navy sm:text-2xl">100%</span>Hands-on</div>
           </div>
         </div>
-        <div className="relative fade-up">
+        <div className="relative fade-up order-1 md:order-2">
           <div className="absolute inset-0 -rotate-3 rounded-3xl bg-brand-gradient" />
           <img
             src={heroAsset.url}
             alt="Digital skills learners"
             width={1024}
             height={1024}
-            className="relative rounded-3xl shadow-pop animate-float"
+            loading="eager"
+            className="relative w-full h-auto rounded-3xl shadow-pop animate-float"
           />
         </div>
       </div>
