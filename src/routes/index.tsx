@@ -125,11 +125,12 @@ function Nav() {
           Enroll
         </a>
         <button
-          className="grid h-10 w-10 place-items-center rounded-lg md:hidden"
+          className="grid h-11 w-11 place-items-center rounded-xl border-2 border-navy bg-white text-navy shadow-card transition active:scale-95 md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
       {open && (
