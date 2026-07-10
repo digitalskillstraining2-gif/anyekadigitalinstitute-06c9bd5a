@@ -206,7 +206,9 @@ function Hero() {
             width={1024}
             height={1024}
             loading="eager"
-            className="relative w-full h-auto rounded-3xl shadow-pop animate-float"
+            decoding="async"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="relative aspect-square w-full max-w-full rounded-3xl object-cover shadow-pop animate-float"
           />
         </div>
       </div>
