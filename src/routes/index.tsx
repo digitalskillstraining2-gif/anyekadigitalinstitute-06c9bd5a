@@ -94,8 +94,8 @@ const whyUs = [
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-2" aria-label="Anyeka Digital Institute home">
-      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
+    <a href="#top" className="flex min-w-0 items-center gap-2" aria-label="Anyeka Digital Institute home">
+      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto max-w-[40vw] object-contain" width={48} height={48} onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
     </a>
   );
 }
@@ -201,7 +201,6 @@ function Hero() {
           </div>
         </div>
         <div className="relative fade-up order-1 md:order-2">
-          
           <img
             src={heroImg}
             alt="Digital skills learners"
@@ -210,7 +209,7 @@ function Hero() {
             loading="eager"
             decoding="async"
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="relative aspect-square w-full max-w-full rounded-3xl object-cover shadow-pop animate-float"
+            className="relative h-auto w-full max-w-full rounded-3xl object-contain shadow-pop animate-float"
             onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }}
           />
         </div>
