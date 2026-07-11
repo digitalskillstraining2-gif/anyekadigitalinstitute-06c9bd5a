@@ -93,7 +93,7 @@ const whyUs = [
 function Logo() {
   return (
     <a href="#top" className="flex items-center gap-2" aria-label="Anyeka Digital Institute home">
-      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} />
+      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
     </a>
   );
 }
