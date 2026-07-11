@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import heroAsset from "@/assets/hero-students.png.asset.json";
-import logoAsset from "@/assets/adi-logo.png.asset.json";
+import heroImg from "@/assets/img/hero-students.png";
+import logoImg from "@/assets/img/adi-logo.png";
 import {
   Menu,
   X,
@@ -93,7 +93,7 @@ const whyUs = [
 function Logo() {
   return (
     <a href="#top" className="flex items-center gap-2" aria-label="Anyeka Digital Institute home">
-      <img src={logoAsset.url} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} />
+      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} />
     </a>
   );
 }
@@ -201,7 +201,7 @@ function Hero() {
         <div className="relative fade-up order-1 md:order-2">
           <div className="absolute inset-0 -rotate-3 rounded-3xl bg-brand-gradient" />
           <img
-            src={heroAsset.url}
+            src={heroImg}
             alt="Digital skills learners"
             width={1024}
             height={1024}
@@ -441,7 +441,7 @@ function Footer() {
   return (
     <footer className="bg-white py-12 text-navy">
       <div className="mx-auto max-w-6xl px-5 text-center">
-        <img src={logoAsset.url} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto" />
+        <img src={logoImg} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto" />
         <div className="mx-auto mt-6 h-px w-24 bg-navy/15" />
         <p className="mt-6 text-sm text-muted-foreground">
           © 2026 Anyeka Digital Institute. All rights reserved.
