@@ -443,7 +443,7 @@ function Footer() {
   return (
     <footer className="bg-white py-12 text-navy">
       <div className="mx-auto max-w-6xl px-5 text-center">
-        <img src={logoImg} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto" onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
+        <img src={logoImg} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto max-w-full object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
         <div className="mx-auto mt-6 h-px w-24 bg-navy/15" />
         <p className="mt-6 text-sm text-muted-foreground">
           © 2026 Anyeka Digital Institute. All rights reserved.
