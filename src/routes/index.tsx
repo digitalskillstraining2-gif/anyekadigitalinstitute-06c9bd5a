@@ -44,6 +44,9 @@ export const Route = createFileRoute("/")({
 
 const ENROLL_URL = "https://tally.so/r/MePxqM";
 const WHATSAPP_URL = "https://wa.me/254796807077";
+const FALLBACK_IMG =
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23e5e7eb'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%236b7280'>Image unavailable</text></svg>";
+const WHATSAPP_URL = "https://wa.me/254796807077";
 
 const courses = [
   {
