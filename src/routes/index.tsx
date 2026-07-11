@@ -211,6 +211,7 @@ function Hero() {
             decoding="async"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="relative aspect-square w-full max-w-full rounded-3xl object-cover shadow-pop animate-float"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }}
           />
         </div>
       </div>
