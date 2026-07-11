@@ -78,6 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Anyeka Digital Institute (ADI)" },
+      { name: "google-site-verification", content: "googledabbfcc819b71ac5" },
       { name: "description", content: "Future Skills Start Here — practical digital skills training." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
