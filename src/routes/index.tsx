@@ -44,6 +44,8 @@ export const Route = createFileRoute("/")({
 
 const ENROLL_URL = "https://tally.so/r/MePxqM";
 const WHATSAPP_URL = "https://wa.me/254796807077";
+const FALLBACK_IMG =
+  "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23e5e7eb'/><text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%236b7280'>Image unavailable</text></svg>";
 
 const courses = [
   {
@@ -93,7 +95,7 @@ const whyUs = [
 function Logo() {
   return (
     <a href="#top" className="flex items-center gap-2" aria-label="Anyeka Digital Institute home">
-      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} />
+      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto" width={48} height={48} onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
     </a>
   );
 }
@@ -209,6 +211,7 @@ function Hero() {
             decoding="async"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="relative aspect-square w-full max-w-full rounded-3xl object-cover shadow-pop animate-float"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }}
           />
         </div>
       </div>
@@ -441,7 +444,7 @@ function Footer() {
   return (
     <footer className="bg-white py-12 text-navy">
       <div className="mx-auto max-w-6xl px-5 text-center">
-        <img src={logoImg} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto" />
+        <img src={logoImg} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto" onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
         <div className="mx-auto mt-6 h-px w-24 bg-navy/15" />
         <p className="mt-6 text-sm text-muted-foreground">
           © 2026 Anyeka Digital Institute. All rights reserved.
