@@ -201,7 +201,7 @@ function Hero() {
           </div>
         </div>
         <div className="relative fade-up order-1 md:order-2">
-          <div className="absolute inset-0 -rotate-3 rounded-3xl bg-brand-gradient" />
+          
           <img
             src={heroImg}
             alt="Digital skills learners"
