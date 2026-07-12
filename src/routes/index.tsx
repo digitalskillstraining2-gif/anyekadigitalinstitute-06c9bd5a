@@ -23,22 +23,53 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Anyeka Digital Institute (ADI) — Future Skills Start Here" },
-      {
-        name: "description",
-        content:
-          "Practical digital skills training in Virtual Assistance, AI tools, freelancing, LinkedIn optimization and client acquisition. Learn, work online, earn globally.",
-      },
-      { property: "og:title", content: "Anyeka Digital Institute (ADI)" },
-      {
-        property: "og:description",
-        content:
-          "Future Skills Start Here — practical, hands-on digital skills training for the modern remote economy.",
-      },
-    ],
-  }),
+  head: () => {
+    const title = "Anyeka Digital Institute (ADI) — Future Skills Start Here";
+    const description =
+      "Practical digital skills training in Virtual Assistance, AI tools, freelancing, LinkedIn optimization and client acquisition. Learn, work online, earn globally.";
+    const url = "https://www.anyekadigitalinstitute.com/";
+    const image = "https://www.anyekadigitalinstitute.com/og-image.jpg";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "keywords", content: "digital skills, virtual assistant training, AI tools, freelancing, LinkedIn optimization, client acquisition, online courses Kenya, remote work training" },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: url },
+        { property: "og:type", content: "website" },
+        { property: "og:image", content: image },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            name: "Anyeka Digital Institute",
+            alternateName: "ADI",
+            url,
+            logo: "https://www.anyekadigitalinstitute.com/logo.png",
+            description,
+            sameAs: [],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+254-796-807-077",
+              contactType: "customer service",
+              email: "hello@anyekadigital.com",
+              areaServed: "KE",
+              availableLanguage: ["English"],
+            },
+          }),
+        },
+      ],
+    };
+  },
   component: Landing,
 });
 
