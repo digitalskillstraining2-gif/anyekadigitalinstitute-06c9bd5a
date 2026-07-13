@@ -92,7 +92,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const xml = renderSitemap(buildEntries(routeTree));
+        const xml = renderSitemap(buildEntries(Object.keys(routeModules)));
         return new Response(xml, {
           headers: {
             "Content-Type": "application/xml",
