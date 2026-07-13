@@ -5,7 +5,7 @@ import {
   collectRoutePathsFromFiles,
   buildEntries,
   renderSitemap,
-} from "./sitemap[.]xml";
+} from "../routes/sitemap[.]xml";
 
 describe("sitemap", () => {
   it("filters non-indexable paths", () => {
