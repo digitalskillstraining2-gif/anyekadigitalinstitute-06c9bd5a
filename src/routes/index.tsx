@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImg from "@/assets/img/hero-students.png";
-import logoAsset from "@/assets/adi-logo-v2.png.asset.json";
+import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
 const logoImg = logoAsset.url;
 import {
   Menu,
@@ -135,7 +135,7 @@ const whyUs = [
 function Logo() {
   return (
     <a href="#top" className="flex min-w-0 items-center gap-2" aria-label="Anyeka Digital Institute home">
-      <img src={logoImg} alt="Anyeka Digital Institute" className="h-12 w-auto max-w-[40vw] object-contain" width={48} height={48} onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
+      <img src={logoImg} alt="Anyeka Digital Institute" className="h-14 w-auto max-w-[55vw] object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
     </a>
   );
 }
