@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImg from "@/assets/img/hero-students.png";
-import logoImg from "@/assets/img/adi-logo.png";
+import logoAsset from "@/assets/adi-logo-v2.png.asset.json";
+const logoImg = logoAsset.url;
 import {
   Menu,
   X,
