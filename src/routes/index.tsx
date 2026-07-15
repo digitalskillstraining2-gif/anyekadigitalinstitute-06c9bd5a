@@ -85,7 +85,7 @@ const courses = [
     duration: "6 Weeks",
     desc: "A comprehensive career-launch program designed to equip learners with the skills, tools, and confidence to succeed as professional Virtual Assistants. Gain hands-on experience, learn modern AI workflows, and discover how to attract and retain clients in today's digital economy.",
     originalPrice: "KSh 6,500",
-    discount: "35% OFF",
+    discount: "65% OFF",
     offerPrice: "KSh 2,275",
   },
   {
@@ -111,13 +111,16 @@ const futureCourses = [
   { title: "AI for Productivity", Icon: Bot },
   { title: "Digital Marketing Essentials", Icon: Megaphone },
   { title: "Social Media Management", Icon: Share2 },
-  { title: "Canva Design for Beginners", Icon: Palette },
+  { title: "Graphic Design with Canva", Icon: Palette },
   { title: "Prompt Engineering Fundamentals", Icon: Brain },
   { title: "Affiliate Marketing Accelerator", Icon: Megaphone },
   { title: "Dropshipping Success Blueprint", Icon: Share2 },
   { title: "Bookkeeping with QuickBooks", Icon: Wallet },
   { title: "Data Analytics Mastery", Icon: Brain },
   { title: "Microsoft Excel Mastery", Icon: GraduationCap },
+  { title: "Video Editing Masterclass", Icon: Palette },
+  { title: "Cybersecurity Essentials", Icon: Brain },
+  { title: "Full-Stack Web Development", Icon: GraduationCap },
 ];
 
 const whyUs = [
