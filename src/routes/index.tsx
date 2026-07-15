@@ -113,6 +113,11 @@ const futureCourses = [
   { title: "Social Media Management", Icon: Share2 },
   { title: "Canva Design for Beginners", Icon: Palette },
   { title: "Prompt Engineering Fundamentals", Icon: Brain },
+  { title: "Affiliate Marketing Accelerator", Icon: Megaphone },
+  { title: "Dropshipping Success Blueprint", Icon: Share2 },
+  { title: "Bookkeeping with QuickBooks", Icon: Wallet },
+  { title: "Data Analytics Mastery", Icon: Brain },
+  { title: "Microsoft Excel Mastery", Icon: GraduationCap },
 ];
 
 const whyUs = [
