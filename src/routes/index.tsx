@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImg from "@/assets/img/hero-students.png";
 import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
-const logoImg = logoAsset.url;
+const ASSET_ORIGIN = "https://anyekadigitalinstitute.lovable.app";
+const logoImg = `${ASSET_ORIGIN}${logoAsset.url}`;
 import {
   Menu,
   X,
@@ -133,9 +134,27 @@ const whyUs = [
 ];
 
 function Logo() {
+  const [logoFailed, setLogoFailed] = useState(false);
+
   return (
-    <a href="#top" className="flex min-w-0 items-center gap-2" aria-label="Anyeka Digital Institute home">
-      <img src={logoImg} alt="Anyeka Digital Institute" className="h-14 w-auto max-w-[55vw] object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
+    <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="Anyeka Digital Institute home">
+      {!logoFailed ? (
+        <img
+          src={logoImg}
+          alt="Anyeka Digital Institute"
+          className="h-14 w-auto max-w-[55vw] object-contain"
+          onError={() => setLogoFailed(true)}
+        />
+      ) : (
+        <>
+          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-brand-gradient text-lg font-extrabold text-white shadow-card">
+            ADI
+          </span>
+          <span className="max-w-[11rem] text-sm font-extrabold leading-tight text-navy sm:max-w-none sm:text-base">
+            Anyeka Digital Institute
+          </span>
+        </>
+      )}
     </a>
   );
 }
@@ -480,10 +499,28 @@ function Contact() {
 }
 
 function Footer() {
+  const [logoFailed, setLogoFailed] = useState(false);
+
   return (
     <footer className="bg-white py-12 text-navy">
       <div className="mx-auto max-w-6xl px-5 text-center">
-        <img src={logoImg} alt="Anyeka Digital Institute" className="mx-auto h-28 w-auto max-w-full object-contain" onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG; }} />
+        {!logoFailed ? (
+          <img
+            src={logoImg}
+            alt="Anyeka Digital Institute"
+            className="mx-auto h-28 w-auto max-w-full object-contain"
+            onError={() => setLogoFailed(true)}
+          />
+        ) : (
+          <div className="mx-auto flex w-fit items-center justify-center gap-3">
+            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-gradient text-xl font-extrabold text-white shadow-card">
+              ADI
+            </span>
+            <span className="text-left text-lg font-extrabold leading-tight text-navy">
+              Anyeka Digital<br />Institute
+            </span>
+          </div>
+        )}
         <div className="mx-auto mt-6 h-px w-24 bg-navy/15" />
         <p className="mt-6 text-sm text-muted-foreground">
           © 2026 Anyeka Digital Institute. All rights reserved.
