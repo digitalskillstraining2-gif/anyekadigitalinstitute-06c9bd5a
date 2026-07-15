@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroImg from "@/assets/img/hero-students.png";
-import logoImg from "@/assets/img/adi-logo.png";
+import logoAsset from "@/assets/adi-logo-v2.png.asset.json";
+const logoImg = logoAsset.url;
 import {
   Menu,
   X,
@@ -61,7 +62,7 @@ export const Route = createFileRoute("/")({
               "@type": "ContactPoint",
               telephone: "+254-796-807-077",
               contactType: "customer service",
-              email: "hello@anyekadigital.com",
+              email: "hello@anyekadigitalinstitute.com",
               areaServed: "KE",
               availableLanguage: ["English"],
             },
@@ -112,6 +113,11 @@ const futureCourses = [
   { title: "Social Media Management", Icon: Share2 },
   { title: "Canva Design for Beginners", Icon: Palette },
   { title: "Prompt Engineering Fundamentals", Icon: Brain },
+  { title: "Affiliate Marketing Accelerator", Icon: Megaphone },
+  { title: "Dropshipping Success Blueprint", Icon: Share2 },
+  { title: "Bookkeeping with QuickBooks", Icon: Wallet },
+  { title: "Data Analytics Mastery", Icon: Brain },
+  { title: "Microsoft Excel Mastery", Icon: GraduationCap },
 ];
 
 const whyUs = [
@@ -435,7 +441,7 @@ function Contact() {
             </div>
           </a>
           <a
-            href="mailto:hello@anyekadigital.com"
+            href="mailto:hello@anyekadigitalinstitute.com"
             className="flex items-center gap-4 rounded-2xl bg-white/10 p-5 backdrop-blur transition hover:bg-white/20"
           >
             <div className="grid h-12 w-12 place-items-center rounded-xl bg-white text-magenta">
@@ -443,7 +449,7 @@ function Contact() {
             </div>
             <div className="text-left">
               <div className="text-xs uppercase tracking-wider text-white/70">Email</div>
-              <div className="font-semibold">hello@anyekadigital.com</div>
+              <div className="font-semibold">hello@anyekadigitalinstitute.com</div>
             </div>
           </a>
         </div>
