@@ -469,12 +469,12 @@ function Future() {
           <p className="mt-3 text-white/70">More programs launching soon — be the first to know.</p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {futureCourses.map(({ title, Icon }) => (
+          {futureCourses.map(({ title, Icon }, i) => (
+            <Reveal key={title} delay={(i % 3) * 90} className="h-full">
             <div
-              key={title}
-              className="group rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-magenta hover:bg-white/10"
+              className="group h-full rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-magenta hover:bg-white/10"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-white">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-white transition-transform duration-300 group-hover:scale-110">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-lg font-bold">{title}</h3>
@@ -485,8 +485,10 @@ function Future() {
                 Coming Soon
               </button>
             </div>
+            </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
