@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useCountUp, useReveal } from "@/hooks/use-reveal";
+
 import heroImg from "@/assets/img/hero-students.png";
 import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
 const ASSET_ORIGIN = "https://anyekadigitalinstitute.lovable.app";
@@ -90,39 +92,74 @@ const courses = [
     offerPrice: "KSh 2,275",
   },
   {
-    title: "LinkedIn Optimization Masterclass",
-    duration: "2 Days",
-    desc: "Build a professional LinkedIn presence that attracts recruiters, clients, and career opportunities. Learn how to optimize your profile, strengthen your personal brand, expand your network, and position yourself for greater visibility and success online.",
-    originalPrice: "KSh 1,998",
+    title: "Digital Marketing Masterclass",
+    duration: "6 Weeks",
+    desc: "Become a job-ready Digital Marketer by learning how to build effective marketing campaigns, grow brands online, create compelling content, leverage social media and email marketing, understand SEO fundamentals, and measure campaign performance to drive real business results.",
+    originalPrice: "KSh 7,500",
+    discount: "53% OFF",
+    offerPrice: "KSh 3,500",
+  },
+  {
+    title: "Social Media Management Masterclass",
+    duration: "6 Weeks",
+    desc: "Become a job-ready Social Media Manager by learning how to manage business accounts, create winning content strategies, grow engaged audiences, respond to customers professionally, analyze performance, and deliver measurable results for clients.",
+    originalPrice: "KSh 5,000",
+    discount: "40% OFF",
+    offerPrice: "KSh 3,000",
+  },
+  {
+    title: "Mobile Video Editing Masterclass",
+    duration: "6 Weeks",
+    desc: "Master mobile video editing using your smartphone. Learn to create professional Reels, social media content, and marketing videos with CapCut and Video Maker, even with no previous editing experience.",
+    originalPrice: "KSh 6,000",
+    discount: "42% OFF",
+    offerPrice: "KSh 3,499",
+  },
+  {
+    title: "Affiliate Marketing Accelerator",
+    duration: "2 Weeks",
+    desc: "Become a successful Affiliate Marketer by learning how to identify profitable niches, choose high-converting products, build an engaged audience, create content that drives sales, and earn commissions through ethical and sustainable marketing strategies.",
+    originalPrice: "KSh 2,500",
+    discount: "46% OFF",
+    offerPrice: "KSh 1,350",
+  },
+  {
+    title: "Dropshipping Accelerator",
+    duration: "2 Weeks",
+    desc: "Build a profitable dropshipping business by learning how to identify winning products, source reliable suppliers, set up a professional online store, market your products effectively, manage customer orders, and scale your business without holding inventory.",
+    originalPrice: "KSh 3,000",
     discount: "50% OFF",
-    offerPrice: "KSh 999",
+    offerPrice: "KSh 1,500",
+  },
+  {
+    title: "LinkedIn Optimization Masterclass",
+    duration: "2 Weeks",
+    desc: "Build a professional LinkedIn presence that attracts recruiters, clients, and career opportunities. Learn how to optimize your profile, strengthen your personal brand, expand your network, and position yourself for greater visibility and success online.",
+    originalPrice: "KSh 2,500",
+    discount: "46% OFF",
+    offerPrice: "KSh 1,350",
   },
   {
     title: "Client Acquisition Mastery",
-    duration: "2 Days",
+    duration: "2 Weeks",
     desc: "Learn proven strategies for finding, approaching, and winning clients online. Discover how to position your services effectively, craft compelling outreach messages, build meaningful connections, and convert prospects into paying clients.",
-    originalPrice: "KSh 1,998",
+    originalPrice: "KSh 3,000",
     discount: "50% OFF",
-    offerPrice: "KSh 999",
+    offerPrice: "KSh 1,500",
   },
-
 ];
 
 const futureCourses = [
   { title: "AI for Productivity", Icon: Bot },
-  { title: "Digital Marketing Essentials", Icon: Megaphone },
-  { title: "Social Media Management", Icon: Share2 },
   { title: "Graphic Design with Canva", Icon: Palette },
   { title: "Prompt Engineering Fundamentals", Icon: Brain },
-  { title: "Affiliate Marketing Accelerator", Icon: Megaphone },
-  { title: "Dropshipping Success Blueprint", Icon: Share2 },
   { title: "Bookkeeping with QuickBooks", Icon: Wallet },
   { title: "Data Analytics Mastery", Icon: Brain },
   { title: "Microsoft Excel Mastery", Icon: GraduationCap },
-  { title: "Video Editing Masterclass", Icon: Palette },
   { title: "Cybersecurity Essentials", Icon: Brain },
   { title: "Full-Stack Web Development", Icon: GraduationCap },
 ];
+
 
 const whyUs = [
   { title: "Experienced Instructors", Icon: Users },
@@ -221,8 +258,53 @@ function Nav() {
   );
 }
 
+function Stat({
+  value,
+  suffix,
+  label,
+  divider,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+  divider?: boolean;
+}) {
+  const { ref, value: current } = useCountUp(value);
+  return (
+    <div className={divider ? "border-l border-border pl-3 sm:pl-6" : undefined}>
+      <span ref={ref} className="block text-xl font-bold text-navy sm:text-2xl">
+        {current.toLocaleString()}
+        {suffix}
+      </span>
+      {label}
+    </div>
+  );
+}
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const { ref, visible } = useReveal();
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function Hero() {
   return (
+
     <section id="top" className="relative overflow-hidden">
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-magenta/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-accent/40 blur-3xl" />
@@ -254,10 +336,11 @@ function Hero() {
             </a>
           </div>
           <div className="mt-8 grid grid-cols-3 gap-3 text-xs text-muted-foreground sm:gap-6 sm:text-sm">
-            <div><span className="block text-xl font-bold text-navy sm:text-2xl">500+</span>Learners trained</div>
-            <div className="border-l border-border pl-3 sm:pl-6"><span className="block text-xl font-bold text-navy sm:text-2xl">6+</span>Practical courses</div>
-            <div className="border-l border-border pl-3 sm:pl-6"><span className="block text-xl font-bold text-navy sm:text-2xl">100%</span>Hands-on</div>
+            <Stat value={1200} suffix="+" label="Learners Trained" />
+            <Stat value={25} suffix="+" label="Practical Courses" divider />
+            <Stat value={100} suffix="%" label="Hands-on" divider />
           </div>
+
         </div>
         <div className="relative fade-up order-1 md:order-2">
           <img
@@ -315,24 +398,25 @@ function Courses() {
             Career-ready training built around real outcomes — enroll and start learning.
           </p>
         </div>
-        <div className="mt-12 grid gap-7 md:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((c, i) => (
+            <Reveal key={c.title} delay={(i % 3) * 90} className="h-full">
             <article
-              key={c.title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-pop"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-magenta/50 hover:shadow-pop"
             >
               <div
-                className="absolute right-0 top-0 h-24 w-24 rounded-bl-3xl"
+                className="absolute right-0 top-0 h-24 w-24 rounded-bl-3xl transition-opacity duration-300 group-hover:opacity-30"
                 style={{
                   background:
-                    i === 0
+                    i % 3 === 0
                       ? "var(--magenta)"
-                      : i === 1
+                      : i % 3 === 1
                         ? "var(--navy)"
                         : "var(--sun)",
                   opacity: 0.15,
                 }}
               />
+
               <span className="inline-flex w-fit rounded-full bg-accent/30 px-3 py-1 text-xs font-semibold text-navy">
                 {c.duration}
               </span>
@@ -366,6 +450,8 @@ function Courses() {
                 Enroll Now <ArrowRight className="h-4 w-4" />
               </a>
             </article>
+            </Reveal>
+
           ))}
         </div>
       </div>
@@ -383,12 +469,12 @@ function Future() {
           <p className="mt-3 text-white/70">More programs launching soon — be the first to know.</p>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {futureCourses.map(({ title, Icon }) => (
+          {futureCourses.map(({ title, Icon }, i) => (
+            <Reveal key={title} delay={(i % 3) * 90} className="h-full">
             <div
-              key={title}
-              className="group rounded-3xl border border-white/10 bg-white/5 p-6 transition hover:border-magenta hover:bg-white/10"
+              className="group h-full rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:-translate-y-1 hover:border-magenta hover:bg-white/10"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-white">
+              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-white transition-transform duration-300 group-hover:scale-110">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-lg font-bold">{title}</h3>
@@ -399,8 +485,10 @@ function Future() {
                 Coming Soon
               </button>
             </div>
+            </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );
@@ -416,9 +504,9 @@ function Why() {
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whyUs.map(({ title, Icon }, i) => (
+            <Reveal key={title} delay={(i % 3) * 90} className="h-full">
             <div
-              key={title}
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-card transition hover:border-magenta"
+              className="flex h-full items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-magenta hover:shadow-pop"
             >
               <div
                 className="grid h-12 w-12 shrink-0 place-items-center rounded-xl text-white"
@@ -431,7 +519,9 @@ function Why() {
               </div>
               <span className="font-semibold">{title}</span>
             </div>
+            </Reveal>
           ))}
+
         </div>
       </div>
     </section>

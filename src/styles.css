@@ -107,4 +107,30 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* Scroll reveal (slide-up + fade) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Gentle image zoom on hover */
+  .zoom-hover { overflow: hidden; }
+  .zoom-hover img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+  .zoom-hover:hover img { transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .fade-up, .animate-float { animation: none !important; }
+  .zoom-hover img { transition: none !important; }
+  .zoom-hover:hover img { transform: none !important; }
+  html { scroll-behavior: auto; }
 }
