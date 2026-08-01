@@ -256,8 +256,53 @@ function Nav() {
   );
 }
 
+function Stat({
+  value,
+  suffix,
+  label,
+  divider,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+  divider?: boolean;
+}) {
+  const { ref, value: current } = useCountUp(value);
+  return (
+    <div className={divider ? "border-l border-border pl-3 sm:pl-6" : undefined}>
+      <span ref={ref} className="block text-xl font-bold text-navy sm:text-2xl">
+        {current.toLocaleString()}
+        {suffix}
+      </span>
+      {label}
+    </div>
+  );
+}
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const { ref, visible } = useReveal();
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function Hero() {
   return (
+
     <section id="top" className="relative overflow-hidden">
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-magenta/30 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-accent/40 blur-3xl" />
