@@ -289,10 +289,11 @@ function Hero() {
             </a>
           </div>
           <div className="mt-8 grid grid-cols-3 gap-3 text-xs text-muted-foreground sm:gap-6 sm:text-sm">
-            <div><span className="block text-xl font-bold text-navy sm:text-2xl">500+</span>Learners trained</div>
-            <div className="border-l border-border pl-3 sm:pl-6"><span className="block text-xl font-bold text-navy sm:text-2xl">6+</span>Practical courses</div>
-            <div className="border-l border-border pl-3 sm:pl-6"><span className="block text-xl font-bold text-navy sm:text-2xl">100%</span>Hands-on</div>
+            <Stat value={1200} suffix="+" label="Learners Trained" />
+            <Stat value={25} suffix="+" label="Practical Courses" divider />
+            <Stat value={100} suffix="%" label="Hands-on" divider />
           </div>
+
         </div>
         <div className="relative fade-up order-1 md:order-2">
           <img
