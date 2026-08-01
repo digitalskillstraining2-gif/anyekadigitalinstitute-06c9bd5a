@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useCountUp, useReveal } from "@/hooks/use-reveal";
+
 import heroImg from "@/assets/img/hero-students.png";
 import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
 const ASSET_ORIGIN = "https://anyekadigitalinstitute.lovable.app";
