@@ -398,24 +398,25 @@ function Courses() {
             Career-ready training built around real outcomes — enroll and start learning.
           </p>
         </div>
-        <div className="mt-12 grid gap-7 md:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((c, i) => (
+            <Reveal key={c.title} delay={(i % 3) * 90} className="h-full">
             <article
-              key={c.title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-card transition hover:-translate-y-1 hover:shadow-pop"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-magenta/50 hover:shadow-pop"
             >
               <div
-                className="absolute right-0 top-0 h-24 w-24 rounded-bl-3xl"
+                className="absolute right-0 top-0 h-24 w-24 rounded-bl-3xl transition-opacity duration-300 group-hover:opacity-30"
                 style={{
                   background:
-                    i === 0
+                    i % 3 === 0
                       ? "var(--magenta)"
-                      : i === 1
+                      : i % 3 === 1
                         ? "var(--navy)"
                         : "var(--sun)",
                   opacity: 0.15,
                 }}
               />
+
               <span className="inline-flex w-fit rounded-full bg-accent/30 px-3 py-1 text-xs font-semibold text-navy">
                 {c.duration}
               </span>
