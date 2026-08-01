@@ -504,9 +504,9 @@ function Why() {
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whyUs.map(({ title, Icon }, i) => (
+            <Reveal key={title} delay={(i % 3) * 90} className="h-full">
             <div
-              key={title}
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-card transition hover:border-magenta"
+              className="flex h-full items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-magenta hover:shadow-pop"
             >
               <div
                 className="grid h-12 w-12 shrink-0 place-items-center rounded-xl text-white"
@@ -519,7 +519,9 @@ function Why() {
               </div>
               <span className="font-semibold">{title}</span>
             </div>
+            </Reveal>
           ))}
+
         </div>
       </div>
     </section>
