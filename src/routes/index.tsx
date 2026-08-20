@@ -383,9 +383,7 @@ function About() {
             work, freelancing, online income opportunities, and digital careers.
           </p>
           <p>
-            At ADI, we offer hands-on training in areas such as Virtual Assistance, AI Tools,
-            Digital Marketing, Freelancing, Social Media Management, Mobile Video Editing, and
-            other in-demand digital skills.
+            At ADI, we offer hands-on training in areas such as Virtual Assistance, AI Productivity &amp; Automation, Digital Marketing, Freelancing, Social Media Management, Mobile Video Editing, Data Analytics, Web Development, Graphic Design, and other in-demand digital skills.
           </p>
           <p>
             Our training is practical, beginner-friendly, and focused on helping learners move
@@ -414,7 +412,7 @@ function Founder() {
           <div className="overflow-hidden rounded-2xl border border-border shadow-xl">
             <img
               src={founderImg}
-              alt="Agnes Mutuku, Founder of Anyeka Digital Institute"
+              alt="Agie Mutuku, Founder of Anyeka Digital Institute"
               loading="lazy"
               className="h-full w-full object-cover"
               onError={(e) => {
@@ -430,7 +428,7 @@ function Founder() {
           <div className="mt-4 h-1 w-20 rounded-full bg-brand-gradient" />
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
-              I'm <span className="font-semibold text-foreground">Agnes Mutuku</span>, Founder of
+              I'm <span className="font-semibold text-foreground">Agie Mutuku</span>, Founder of
               Anyeka Digital Institute.
             </p>
             <p>
