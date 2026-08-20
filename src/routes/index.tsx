@@ -85,11 +85,11 @@ const FALLBACK_IMG =
 const courses = [
   {
     title: "Virtual Assistant Mastery",
-    duration: "6 Weeks",
+    duration: "8 Weeks",
     desc: "A comprehensive career-launch program designed to equip learners with the skills, tools, and confidence to succeed as professional Virtual Assistants. Gain hands-on experience, learn modern AI workflows, and discover how to attract and retain clients in today's digital economy.",
     originalPrice: "KSh 6,500",
-    discount: "65% OFF",
-    offerPrice: "KSh 2,275",
+    discount: "50% OFF",
+    offerPrice: "KSh 3,250",
   },
   {
     title: "Digital Marketing Masterclass",
