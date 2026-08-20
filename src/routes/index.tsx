@@ -4,8 +4,10 @@ import { useCountUp, useReveal } from "@/hooks/use-reveal";
 
 import heroImg from "@/assets/img/hero-students.png";
 import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
+import founderAsset from "@/assets/founder-agnes.png.asset.json";
 const ASSET_ORIGIN = "https://anyekadigitalinstitute.lovable.app";
 const logoImg = `${ASSET_ORIGIN}${logoAsset.url}`;
+const founderImg = `${ASSET_ORIGIN}${founderAsset.url}`;
 import {
   Menu,
   X,
