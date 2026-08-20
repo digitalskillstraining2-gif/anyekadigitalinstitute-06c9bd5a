@@ -372,14 +372,83 @@ function About() {
         </div>
         <div className="space-y-5 text-lg leading-relaxed text-muted-foreground md:col-span-3">
           <p>
-            Anyeka Digital Institute (ADI) equips learners with practical, in-demand digital
-            skills for today's job market. We offer hands-on training in Virtual Assistance, AI
-            Tools, Digital Marketing, Freelancing, Social Media Management, and more.
+            Anyeka Digital Institute (ADI) is a practical digital skills training institute
+            created to help people develop relevant skills they can use in the real world.
           </p>
           <p>
-            Our instructors are experienced professionals with successful online careers who
-            bring real-world knowledge into every class. Our goal is to help learners gain
-            skills that lead to remote work opportunities, online income, and career growth.
+            We believe digital education should go beyond theory and certificates. Our goal is
+            to equip learners with practical skills, confidence, and guidance to pursue remote
+            work, freelancing, online income opportunities, and digital careers.
+          </p>
+          <p>
+            At ADI, we offer hands-on training in areas such as Virtual Assistance, AI Tools,
+            Digital Marketing, Freelancing, Social Media Management, Mobile Video Editing, and
+            other in-demand digital skills.
+          </p>
+          <p>
+            Our training is practical, beginner-friendly, and focused on helping learners move
+            from learning a skill to confidently applying it in the real world.
+          </p>
+          <p className="rounded-xl border-l-4 border-magenta bg-background/80 p-5 text-base text-foreground">
+            <span className="font-semibold">Our Mission:</span> To empower individuals with
+            practical digital skills, mentorship, and confidence to build meaningful
+            opportunities in the digital economy.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Founder() {
+  const reveal = useReveal();
+  return (
+    <section id="founder" className="py-20">
+      <div
+        ref={reveal.ref}
+        className={`mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2 ${reveal.className}`}
+      >
+        <div className="order-1 md:order-none">
+          <div className="overflow-hidden rounded-2xl border border-border shadow-xl">
+            <img
+              src={founderImg}
+              alt="Agnes Mutuku, Founder of Anyeka Digital Institute"
+              loading="lazy"
+              className="h-full w-full object-cover"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG;
+              }}
+            />
+          </div>
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Meet the <span className="text-magenta">Founder</span>
+          </h2>
+          <div className="mt-4 h-1 w-20 rounded-full bg-brand-gradient" />
+          <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              I'm <span className="font-semibold text-foreground">Agnes Mutuku</span>, Founder of
+              Anyeka Digital Institute.
+            </p>
+            <p>
+              With over 5 years of experience working remotely and online as a Virtual Assistant
+              and Market Research Specialist, alongside experience in digital services including
+              landing page creation, I have built my career around helping businesses and
+              individuals navigate the digital world.
+            </p>
+            <p>
+              I created ADI from my passion for training, empowering, and mentoring people to
+              build practical digital skills and create online career opportunities of their own.
+            </p>
+            <p>
+              Having built my own career through these skills, my goal is to help others gain the
+              knowledge, confidence, and practical experience they need to do the same.
+            </p>
+          </div>
+          <p className="mt-6 text-sm font-medium text-foreground/80">
+            5+ Years of Remote &amp; Online Experience | Virtual Assistance | Market Research |
+            Landing Pages | Digital Skills Training
           </p>
         </div>
       </div>
