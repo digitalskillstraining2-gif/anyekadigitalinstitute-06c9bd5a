@@ -401,12 +401,12 @@ function About() {
 }
 
 function Founder() {
-  const reveal = useReveal();
+  const { ref, visible } = useReveal();
   return (
     <section id="founder" className="py-20">
       <div
-        ref={reveal.ref}
-        className={`mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2 ${reveal.className}`}
+        ref={ref}
+        className={`reveal ${visible ? "is-visible" : ""} mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2`}
       >
         <div className="order-1 md:order-none">
           <div className="overflow-hidden rounded-2xl border border-border shadow-xl">
