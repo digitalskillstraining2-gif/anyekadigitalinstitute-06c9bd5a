@@ -698,6 +698,7 @@ function Landing() {
       <main>
         <Hero />
         <About />
+        <Founder />
         <Courses />
         <Future />
         <Why />
