@@ -203,6 +203,7 @@ function Nav() {
   const links = [
     ["About", "#about"],
     ["Courses", "#courses"],
+    ["Webinars", "#webinars"],
     ["Coming Soon", "#future"],
     ["Why ADI", "#why"],
     ["Contact", "#contact"],
