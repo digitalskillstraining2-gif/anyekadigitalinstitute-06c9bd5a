@@ -5,9 +5,11 @@ import { useCountUp, useReveal } from "@/hooks/use-reveal";
 import heroImg from "@/assets/img/hero-students.png";
 import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
 import founderAsset from "@/assets/founder-agnes.png.asset.json";
+import webinarVaAsset from "@/assets/va-webinar-sep-2026.png.asset.json";
 const ASSET_ORIGIN = "https://anyekadigitalinstitute.lovable.app";
 const logoImg = `${ASSET_ORIGIN}${logoAsset.url}`;
 const founderImg = `${ASSET_ORIGIN}${founderAsset.url}`;
+const webinarVaImg = `${ASSET_ORIGIN}${webinarVaAsset.url}`;
 import {
   Menu,
   X,
@@ -26,6 +28,9 @@ import {
   Share2,
   Palette,
   Brain,
+  CalendarDays,
+  Clock,
+  Video,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -529,6 +534,10 @@ function Courses() {
   );
 }
 
+const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG;
+};
+
 type Webinar = {
   title: string;
   flyer: string;
@@ -829,6 +838,7 @@ function Landing() {
         <About />
         <Founder />
         <Courses />
+        <Webinars />
         <Future />
         <Why />
         <Contact />
