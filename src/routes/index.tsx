@@ -660,6 +660,7 @@ function Webinars() {
 }
 
 function Future() {
+  return (
     <section id="future" className="bg-navy py-20 text-white">
       <div className="mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-2xl text-center">
