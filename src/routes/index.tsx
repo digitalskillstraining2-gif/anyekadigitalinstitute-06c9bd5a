@@ -5,9 +5,11 @@ import { useCountUp, useReveal } from "@/hooks/use-reveal";
 import heroImg from "@/assets/img/hero-students.png";
 import logoAsset from "@/assets/adi-logo-v3.png.asset.json";
 import founderAsset from "@/assets/founder-agnes.png.asset.json";
+import webinarVaAsset from "@/assets/va-webinar-sep-2026.png.asset.json";
 const ASSET_ORIGIN = "https://anyekadigitalinstitute.lovable.app";
 const logoImg = `${ASSET_ORIGIN}${logoAsset.url}`;
 const founderImg = `${ASSET_ORIGIN}${founderAsset.url}`;
+const webinarVaImg = `${ASSET_ORIGIN}${webinarVaAsset.url}`;
 import {
   Menu,
   X,
@@ -26,6 +28,9 @@ import {
   Share2,
   Palette,
   Brain,
+  CalendarDays,
+  Clock,
+  Video,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -203,6 +208,7 @@ function Nav() {
   const links = [
     ["About", "#about"],
     ["Courses", "#courses"],
+    ["Webinars", "#webinars"],
     ["Coming Soon", "#future"],
     ["Why ADI", "#why"],
     ["Contact", "#contact"],
@@ -528,6 +534,140 @@ function Courses() {
   );
 }
 
+const onImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+  (e.currentTarget as HTMLImageElement).src = FALLBACK_IMG;
+};
+
+type Webinar = {
+  title: string;
+  flyer: string;
+  desc: string;
+  date: string;
+  time: string;
+  format: string;
+  cta: string;
+  url: string;
+};
+
+const upcomingWebinars: Webinar[] = [
+  {
+    title: "How to Start a Virtual Assistant Career in 2026 — With No Experience",
+    flyer: webinarVaImg,
+    desc:
+      "Learn what it takes to start a career as a Virtual Assistant, even if you have no previous experience. Discover the skills clients look for, how to find your first clients, how much Virtual Assistants can earn, and the practical steps to build a professional VA career.",
+    date: "Wednesday, 16 September 2026",
+    time: "7:00 PM – 8:00 PM EAT",
+    format: "Online Webinar",
+    cta: "Reserve Your Free Spot",
+    url: "https://tally.so/r/KYELEK",
+  },
+];
+
+type PastWebinar = Webinar & { recordingUrl?: string; resourcesUrl?: string };
+const pastWebinars: PastWebinar[] = [];
+
+function Webinars() {
+  return (
+    <section id="webinars" className="bg-secondary/40 py-20">
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-sm font-semibold uppercase tracking-wider text-magenta">Webinars</span>
+          <h2 className="mt-2 text-3xl font-bold text-navy sm:text-4xl">Free Online Webinars</h2>
+          <p className="mt-3 text-muted-foreground">
+            Learn practical digital skills, discover new opportunities, and take the next step in your career or
+            business.
+          </p>
+        </div>
+
+        <div className="mt-12 space-y-10">
+          {upcomingWebinars.map((w, i) => (
+            <Reveal key={w.title} delay={i * 90}>
+              <article className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
+                <div className="grid gap-0 md:grid-cols-2">
+                  <a
+                    href={w.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-secondary/60 p-4 sm:p-6"
+                    aria-label={`Register for ${w.title}`}
+                  >
+                    <img
+                      src={w.flyer}
+                      onError={onImgError}
+                      alt={`${w.title} webinar flyer`}
+                      loading="lazy"
+                      className="mx-auto h-auto w-full max-w-md rounded-2xl object-contain shadow-card"
+                    />
+                  </a>
+                  <div className="flex flex-col justify-center p-6 sm:p-8">
+                    <span className="inline-flex w-fit rounded-full bg-sun px-3 py-1 text-xs font-bold uppercase tracking-wide text-navy">
+                      Upcoming Webinar
+                    </span>
+                    <h3 className="mt-4 text-2xl font-extrabold leading-tight text-navy sm:text-3xl">{w.title}</h3>
+                    <p className="mt-4 text-muted-foreground">{w.desc}</p>
+                    <ul className="mt-6 space-y-2 text-sm font-medium text-navy">
+                      <li className="flex items-center gap-2">
+                        <CalendarDays className="h-4 w-4 shrink-0 text-magenta" /> {w.date}
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Clock className="h-4 w-4 shrink-0 text-magenta" /> {w.time}
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Video className="h-4 w-4 shrink-0 text-magenta" /> {w.format}
+                      </li>
+                    </ul>
+                    <a
+                      href={w.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-magenta px-6 py-4 text-center text-base font-bold uppercase tracking-wide text-white shadow-pop transition hover:bg-navy sm:w-auto"
+                    >
+                      {w.cta} <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <p className="mt-3 text-xs text-muted-foreground">Limited spots available — registration is free.</p>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        {pastWebinars.length > 0 && (
+          <div className="mt-16">
+            <h3 className="text-center text-2xl font-bold text-navy">Past Webinars</h3>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {pastWebinars.map((w) => (
+                <article key={w.title} className="rounded-3xl border border-border bg-card p-5 shadow-card">
+                  <img
+                    src={w.flyer}
+                    onError={onImgError}
+                    alt={`${w.title} webinar flyer`}
+                    loading="lazy"
+                    className="h-auto w-full rounded-2xl object-contain"
+                  />
+                  <h4 className="mt-4 text-lg font-bold text-navy">{w.title}</h4>
+                  <p className="mt-1 text-xs font-semibold text-muted-foreground">{w.date}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{w.desc}</p>
+                  {(w.recordingUrl || w.resourcesUrl) && (
+                    <a
+                      href={w.recordingUrl ?? w.resourcesUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-full border-2 border-navy px-5 py-2 text-sm font-semibold text-navy transition hover:bg-navy hover:text-white"
+                    >
+                      {w.recordingUrl ? "Watch Recording" : "View Resources"}
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function Future() {
   return (
     <section id="future" className="bg-navy py-20 text-white">
@@ -698,6 +838,7 @@ function Landing() {
         <About />
         <Founder />
         <Courses />
+        <Webinars />
         <Future />
         <Why />
         <Contact />
