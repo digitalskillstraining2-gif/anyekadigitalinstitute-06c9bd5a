@@ -36,9 +36,12 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error }: { error: Error }) {
   console.error(error);
   const router = useRouter();
+  const reset = () => {
+    router.invalidate();
+  };
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
