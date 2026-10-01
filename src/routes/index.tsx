@@ -99,6 +99,14 @@ const courses = [
     offerPrice: "KSh 3,250",
   },
   {
+    title: "AI for Work & Business",
+    duration: "8 Weeks",
+    desc: "Learn practical AI skills to work smarter, improve productivity, create content, conduct research, and use AI effectively in your work or business. No coding experience required.",
+    originalPrice: "KSh 12,000",
+    discount: "50% OFF",
+    offerPrice: "KSh 6,000",
+  },
+  {
     title: "Digital Marketing Masterclass",
     duration: "6 Weeks",
     desc: "Become a job-ready Digital Marketer by learning how to build effective marketing campaigns, grow brands online, create compelling content, leverage social media and email marketing, understand SEO fundamentals, and measure campaign performance to drive real business results.",
@@ -153,14 +161,6 @@ const courses = [
     originalPrice: "KSh 3,000",
     discount: "50% OFF",
     offerPrice: "KSh 1,500",
-  },
-  {
-    title: "AI for Work & Business",
-    duration: "8 Weeks",
-    desc: "Learn practical AI skills to work smarter, improve productivity, create content, conduct research, and use AI effectively in your work or business. No coding experience required.",
-    originalPrice: "KSh 12,000",
-    discount: "50% OFF",
-    offerPrice: "KSh 6,000",
   },
 ];
 
