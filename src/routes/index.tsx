@@ -154,12 +154,18 @@ const courses = [
     discount: "50% OFF",
     offerPrice: "KSh 1,500",
   },
+  {
+    title: "AI for Work & Business",
+    duration: "8 Weeks",
+    desc: "Learn practical AI skills to work smarter, improve productivity, create content, conduct research, and use AI effectively in your work or business. No coding experience required.",
+    originalPrice: "KSh 12,000",
+    discount: "50% OFF",
+    offerPrice: "KSh 6,000",
+  },
 ];
 
 const futureCourses = [
-  { title: "AI for Productivity", Icon: Bot },
   { title: "Graphic Design with Canva", Icon: Palette },
-  { title: "Prompt Engineering Fundamentals", Icon: Brain },
   { title: "Bookkeeping with QuickBooks", Icon: Wallet },
   { title: "Data Analytics Mastery", Icon: Brain },
   { title: "Microsoft Excel Mastery", Icon: GraduationCap },
